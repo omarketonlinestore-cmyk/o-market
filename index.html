@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Market — Electronics & Gadgets</title>
 <link rel="stylesheet" href="style.css">
-<!-- Required once on the homepage so admin login invitations work correctly -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -32,10 +30,73 @@
     <div class="wrap">
       <h2 class="section-title">Catalog</h2>
 
-      <!-- Products are no longer hardcoded here. They load automatically from
-           products.json — the same file your admin panel (/admin) edits. -->
-      <div class="grid" id="product-grid">
-        <p class="spec">Loading products…</p>
+      <div class="grid">
+
+        <!-- PRODUCT 1 -->
+        <article class="card">
+          <div class="card-img">
+            <img src="https://placehold.co/600x600/16161a/e8e8ea?text=Product+1" alt="Wireless Earbuds">
+          </div>
+          <div class="card-body">
+            <h3>Wireless Earbuds Pro</h3>
+            <p class="spec">Bluetooth 5.3 · 30h battery</p>
+            <div class="price">[ 249 MAD ]</div>
+            <a class="btn" href="order.html?product=Wireless%20Earbuds%20Pro&price=249%20MAD">Order Now</a>
+          </div>
+        </article>
+
+        <!-- PRODUCT 2 -->
+        <article class="card">
+          <div class="card-img">
+            <img src="https://placehold.co/600x600/16161a/e8e8ea?text=Product+2" alt="Power Bank">
+          </div>
+          <div class="card-body">
+            <h3>20,000mAh Power Bank</h3>
+            <p class="spec">Fast charge · Dual USB-C</p>
+            <div class="price">[ 199 MAD ]</div>
+            <a class="btn" href="order.html?product=20%2C000mAh%20Power%20Bank&price=199%20MAD">Order Now</a>
+          </div>
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="card">
+          <div class="card-img">
+            <img src="https://placehold.co/600x600/16161a/e8e8ea?text=Product+3" alt="Phone Case">
+          </div>
+          <div class="card-body">
+            <h3>Shockproof Phone Case</h3>
+            <p class="spec">Military-grade drop protection</p>
+            <div class="price">[ 89 MAD ]</div>
+            <a class="btn" href="order.html?product=Shockproof%20Phone%20Case&price=89%20MAD">Order Now</a>
+          </div>
+        </article>
+
+        <!-- PRODUCT 4 -->
+        <article class="card">
+          <div class="card-img">
+            <img src="https://placehold.co/600x600/16161a/e8e8ea?text=Product+4" alt="Smart Watch">
+          </div>
+          <div class="card-body">
+            <h3>Smart Watch Series X</h3>
+            <p class="spec">Heart rate · Notifications · 7-day battery</p>
+            <div class="price">[ 349 MAD ]</div>
+            <a class="btn" href="order.html?product=Smart%20Watch%20Series%20X&price=349%20MAD">Order Now</a>
+          </div>
+        </article>
+
+        <!-- PRODUCT 5 -->
+        <article class="card">
+          <div class="card-img">
+            <img src="https://placehold.co/600x600/16161a/e8e8ea?text=Product+5" alt="LED Ring Light">
+          </div>
+          <div class="card-body">
+            <h3>10" LED Ring Light</h3>
+            <p class="spec">3 tones · Adjustable tripod</p>
+            <div class="price">[ 159 MAD ]</div>
+            <a class="btn" href="order.html?product=10%22%20LED%20Ring%20Light&price=159%20MAD">Order Now</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -47,17 +108,5 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function (user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function () {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
