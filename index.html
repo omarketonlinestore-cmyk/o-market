@@ -1,24 +1,63 @@
-backend:
-  name: git-gateway
-  branch: main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Market — Electronics & Gadgets</title>
+<link rel="stylesheet" href="style.css">
+<!-- Required once on the homepage so admin login invitations work correctly -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
 
-media_folder: "uploads"
-public_folder: "/uploads"
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="logo">O<span class="dot">·</span>MARKET</div>
+      <nav class="header-links">
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-collections:
-  - name: "products"
-    label: "Products"
-    files:
-      - file: "products.json"
-        label: "Product Catalog"
-        name: "catalog"
-        fields:
-          - label: "Products"
-            name: "products"
-            widget: "list"
-            summary: "{{fields.name}} — {{fields.price}} MAD"
-            fields:
-              - { label: "Product Name", name: "name", widget: "string" }
-              - { label: "Price (MAD, numbers only)", name: "price", widget: "number", value_type: "int" }
-              - { label: "Short Description", name: "spec", widget: "string", required: false }
-              - { label: "Product Photo", name: "image", widget: "image" }
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Rabat · Casablanca · Kénitra — nationwide delivery</p>
+      <h1>Real gadgets.<br>Real prices.<br>Cash on delivery.</h1>
+      <p class="hero-sub">Browse the catalog below, tap "Order Now" on what you want, fill in your details, and we call to confirm before we ship.</p>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="wrap">
+      <h2 class="section-title">Catalog</h2>
+
+      <!-- Products are no longer hardcoded here. They load automatically from
+           products.json — the same file your admin panel (/admin) edits. -->
+      <div class="grid" id="product-grid">
+        <p class="spec">Loading products…</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap footer-row">
+      <div class="logo small">O<span class="dot">·</span>MARKET</div>
+      <p>Questions? WhatsApp us at <a href="https://wa.me/2126XXXXXXXX">+212 6XX-XXXXXX</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
