@@ -3,44 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Market — Electronics & Gadgets</title>
+<title>Complete Your Order — O Market</title>
 <link rel="stylesheet" href="style.css">
-<!-- Required once on the homepage so admin login invitations work correctly -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <div class="logo">O<span class="dot">·</span>MARKET</div>
+      <a href="index.html" class="logo">O<span class="dot">·</span>MARKET</a>
       <nav class="header-links">
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#products">Back to catalog</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Rabat · Casablanca · Kénitra — nationwide delivery</p>
-      <h1>Real gadgets.<br>Real prices.<br>Cash on delivery.</h1>
-      <p class="hero-sub">Browse the catalog below, tap "Order Now" on what you want, fill in your details, and we call to confirm before we ship.</p>
-    </div>
-  </section>
+  <section class="order-section">
+    <div class="wrap narrow">
+      <p class="eyebrow">Cash on delivery — pay when it arrives</p>
+      <h1 class="order-title">Confirm your order</h1>
 
-  <section id="products" class="products">
-    <div class="wrap">
-      <h2 class="section-title">Catalog</h2>
-
-      <!-- Products are no longer hardcoded here. They load automatically from
-           products.json — the same file your admin panel (/admin) edits. -->
-      <div class="grid" id="product-grid">
-        <p class="spec">Loading products…</p>
+      <div id="order-summary" class="order-summary">
+        <span class="summary-label">Item</span>
+        <span id="product-name">Loading…</span>
+        <span class="summary-label">Price</span>
+        <span id="product-price">—</span>
       </div>
+
+      <!--
+        REPLACE THE ACTION URL BELOW WITH YOUR OWN FORMSPREE ENDPOINT.
+        See the setup guide document for how to get this in under 2 minutes — it's free.
+      -->
+      <form id="order-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="Product" id="hidden-product">
+        <input type="hidden" name="Price" id="hidden-price">
+
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="Full Name" required placeholder="e.g. Othmane El Amrani">
+
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="Phone Number" required placeholder="06XXXXXXXX">
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="City" required placeholder="e.g. Kénitra">
+
+        <label for="address">Full delivery address</label>
+        <textarea id="address" name="Delivery Address" required placeholder="Street, building, floor, landmark…"></textarea>
+
+        <label for="qty">Quantity</label>
+        <input type="number" id="qty" name="Quantity" value="1" min="1" required>
+
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="Notes" placeholder="Color preference, delivery time, anything else"></textarea>
+
+        <button type="submit" class="btn full">Confirm Order</button>
+        <p class="fine-print">We'll call you within 24h to confirm before shipping. No payment is taken now.</p>
+      </form>
+
+      <div id="success-message" class="success-message" hidden>
+        <h2>Order received</h2>
+        <p>Thank you! We'll call you shortly to confirm your order and delivery details.</p>
+        <a href="index.html" class="btn">Back to catalog</a>
+      </div>
+
     </div>
   </section>
 
-  <footer id="contact" class="site-footer">
+  <footer class="site-footer">
     <div class="wrap footer-row">
       <div class="logo small">O<span class="dot">·</span>MARKET</div>
       <p>Questions? WhatsApp us at <a href="https://wa.me/2126XXXXXXXX">+212 6XX-XXXXXX</a></p>
@@ -48,16 +76,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function (user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function () {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
