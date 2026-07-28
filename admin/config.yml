@@ -1,4 +1,4 @@
 backend:
   name: github
-  repo: your-github-username/o-market
+  repo: omarketonlinestore-cmyk/o-market
   branch: main
