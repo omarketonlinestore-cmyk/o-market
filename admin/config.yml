@@ -2,3 +2,24 @@ backend:
   name: github
   repo: omarketonlinestore-cmyk/o-market
   branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    files:
+      - file: "products.json"
+        label: "Product Catalog"
+        name: "catalog"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}} MAD"
+            fields:
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Price (MAD, numbers only)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Short Description", name: "spec", widget: "string", required: false }
+              - { label: "Product Photo", name: "image", widget: "image" }
