@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "name": "Wireless Earbuds Pro",
-      "price": 249,
-      "spec": "Bluetooth 5.3 · 30h battery",
-      "image": "https://placehold.co/600x600/16161a/e8e8ea?text=Product+1"
+      "name": "Sony ULT - Power Sound",
+      "price": 189,
+      "spec": "High quality, Deep bass.",
+      "image": "/uploads/610DB8Cwm7L._AC_SX679_.jpg.jpeg"
     },
     {
-      "name": "20,000mAh Power Bank",
-      "price": 199,
-      "spec": "Fast charge · Dual USB-C",
-      "image": "https://placehold.co/600x600/16161a/e8e8ea?text=Product+2"
+      "name": "Galaxy Buds 3",
+      "price": 169,
+      "spec": "Bluetooth 5.3, 30 hours battery life",
+      "image": "/uploads/couteurs-galaxy-buds-3-white-sm-r530nzwamea-prix-linksolutions-maroc6.webp"
     },
     {
       "name": "Shockproof Phone Case",
