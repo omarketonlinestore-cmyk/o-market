@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/o-market
+  branch: main
+  base_url: https://YOUR-OAUTH-GATEWAY.vercel.app
+  auth_endpoint: auth
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "site-settings.json"
+        label: "Site Text & Contact"
+        name: "general"
+        fields:
+          - { label: "Store Name (shown as logo)", name: "storeName", widget: "string" }
+          - { label: "Small line above headline", name: "eyebrow", widget: "string" }
+          - { label: "Big headline (one line per sentence)", name: "headline", widget: "text" }
+          - { label: "Text under headline", name: "heroSubtext", widget: "text" }
+          - { label: "Catalog section title", name: "sectionTitle", widget: "string" }
+          - { label: "WhatsApp number (country code, no + or spaces)", name: "whatsappNumber", widget: "string" }
+          - { label: "Footer text before WhatsApp link", name: "footerNote", widget: "string" }
+          - { label: "Order page confirmation note", name: "confirmNote", widget: "text" }
+
+  - name: "products"
+    label: "Products"
+    files:
+      - file: "products.json"
+        label: "Product Catalog"
+        name: "catalog"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}} MAD"
+            fields:
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Price (MAD, numbers only)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Short Description", name: "spec", widget: "string", required: false }
+              - { label: "Product Photo", name: "image", widget: "image" }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Market — Electronics & Gadgets</title>
+<link rel="stylesheet" href="style.css">
+<!-- Required once on the homepage so admin login invitations work correctly -->
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="logo" id="site-logo">O MARKET</div>
+      <nav class="header-links">
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" id="hero-eyebrow">Rabat · Casablanca · Kénitra — nationwide delivery</p>
+      <h1 id="hero-headline">Real gadgets.<br>Real prices.<br>Cash on delivery.</h1>
+      <p class="hero-sub" id="hero-subtext">Browse the catalog below, tap "Order Now" on what you want, fill in your details, and we call to confirm before we ship.</p>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="wrap">
+      <h2 class="section-title" id="section-title">Catalog</h2>
+
+      <!-- Products are no longer hardcoded here. They load automatically from
+           products.json — the same file your admin panel (/admin) edits. -->
+      <div class="grid" id="product-grid">
+        <p class="spec">Loading products…</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap footer-row">
+      <div class="logo small" id="site-logo-footer">O MARKET</div>
+      <p id="footer-contact">Questions? WhatsApp us at <a id="whatsapp-link" href="https://wa.me/2126XXXXXXXX">+212 6XX-XXXXXX</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
