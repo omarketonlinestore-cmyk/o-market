@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: omarketonlinestore-cmyk/o-market
   branch: main
 
 media_folder: "uploads"
@@ -17,7 +18,7 @@ collections:
           - { label: "Sous-titre du logo (ex: Online Store)", name: "tagline", widget: "string" }
           - { label: "Bandeau d'Annonce (Haut de page)", name: "announcement", widget: "string" }
           - { label: "Ligne au-dessus du titre principal", name: "eyebrow", widget: "string" }
-          - { label: "Grand Titre Principal (une ligne par sentence)", name: "headline", widget: "text" }
+          - { label: "Grand Titre Principal (une ligne par phrase)", name: "headline", widget: "text" }
           - { label: "Sous-titre sous le grand titre", name: "heroSubtext", widget: "text" }
           - { label: "Titre de la section catalogue", name: "sectionTitle", widget: "string" }
           - { label: "Numéro WhatsApp (sans + ni espaces, ex: 212600000000)", name: "whatsappNumber", widget: "string" }
