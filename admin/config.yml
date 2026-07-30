@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: omarketonlinestore-cmyk/o-market
+  name: git-gateway
   branch: main
 
 media_folder: "uploads"
@@ -8,34 +7,38 @@ public_folder: "/uploads"
 
 collections:
   - name: "settings"
-    label: "Site Settings"
+    label: "Réglages du Site (Branding & En-tête)"
     files:
       - file: "site-settings.json"
-        label: "Site Text & Contact"
+        label: "Configuration Générale"
         name: "general"
         fields:
-          - { label: "Store Name (shown as logo)", name: "storeName", widget: "string" }
-          - { label: "Small line above headline", name: "eyebrow", widget: "string" }
-          - { label: "Big headline (one line per sentence)", name: "headline", widget: "text" }
-          - { label: "Text under headline", name: "heroSubtext", widget: "text" }
-          - { label: "Catalog section title", name: "sectionTitle", widget: "string" }
-          - { label: "WhatsApp number (country code, no + or spaces)", name: "whatsappNumber", widget: "string" }
-          - { label: "Footer text before WhatsApp link", name: "footerNote", widget: "string" }
-          - { label: "Order page confirmation note", name: "confirmNote", widget: "text" }
+          - { label: "Nom de la Boutique (Affiché comme logo)", name: "storeName", widget: "string" }
+          - { label: "Sous-titre du logo (ex: Online Store)", name: "tagline", widget: "string" }
+          - { label: "Bandeau d'Annonce (Haut de page)", name: "announcement", widget: "string" }
+          - { label: "Ligne au-dessus du titre principal", name: "eyebrow", widget: "string" }
+          - { label: "Grand Titre Principal (une ligne par sentence)", name: "headline", widget: "text" }
+          - { label: "Sous-titre sous le grand titre", name: "heroSubtext", widget: "text" }
+          - { label: "Titre de la section catalogue", name: "sectionTitle", widget: "string" }
+          - { label: "Numéro WhatsApp (sans + ni espaces, ex: 212600000000)", name: "whatsappNumber", widget: "string" }
+          - { label: "Texte avant le lien WhatsApp du pied de page", name: "footerNote", widget: "string" }
+          - { label: "Note de confirmation de commande", name: "confirmNote", widget: "text" }
 
   - name: "products"
-    label: "Products"
+    label: "Produits"
     files:
       - file: "products.json"
-        label: "Product Catalog"
+        label: "Catalogue des Produits"
         name: "catalog"
         fields:
-          - label: "Products"
+          - label: "Produits"
             name: "products"
             widget: "list"
-            summary: "{{fields.name}} — {{fields.price}} MAD"
+            summary: "{{fields.name}} — {{fields.price}} DH"
             fields:
-              - { label: "Product Name", name: "name", widget: "string" }
-              - { label: "Price (MAD, numbers only)", name: "price", widget: "number", value_type: "int" }
-              - { label: "Short Description", name: "spec", widget: "string", required: false }
-              - { label: "Product Photo", name: "image", widget: "image" }
+              - { label: "Nom du Produit", name: "name", widget: "string" }
+              - { label: "Prix actuel (DH, chiffres uniquement)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Ancien Prix (Optionnel, chiffres uniquement)", name: "oldPrice", widget: "number", value_type: "int", required: false }
+              - { label: "Badge (ex: Meilleure Vente, Nouveau)", name: "badge", widget: "string", required: false }
+              - { label: "Courte Description / Spécifications", name: "spec", widget: "string", required: false }
+              - { label: "Photo du Produit", name: "image", widget: "image" }
