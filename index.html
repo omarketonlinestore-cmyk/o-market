@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Market — Électronique & Gadgets au Maroc</title>
 <link rel="stylesheet" href="style.css">
-<!-- Decap CMS Identity Widget -->
+<!-- Decap / Sveltia CMS Identity Widget -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -34,7 +34,6 @@
       <nav class="header-links">
         <a href="#products">Produits</a>
         <a href="#contact">Contact</a>
-        <a href="/admin/" class="admin-link">Admin</a>
       </nav>
     </div>
   </header>
@@ -103,16 +102,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function (user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function () {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
