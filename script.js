@@ -126,8 +126,9 @@ if (form) {
       });
 
       if (response.ok) {
-        form.hidden = true;
+        form.style.display = "none";
         document.getElementById("success-message").hidden = false;
+        document.getElementById("success-message").style.display = "block";
       } else {
         alert("Something went wrong sending your order. Please try again, or contact us on WhatsApp.");
         submitBtn.disabled = false;
