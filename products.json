@@ -1,34 +1,28 @@
 {
   "products": [
     {
-      "name": "Sony ULT - Power Sound",
-      "price": 189,
-      "spec": "High quality, Deep bass.",
-      "image": "/uploads/610DB8Cwm7L._AC_SX679_.jpg.jpeg"
+      "name": "Samsung Galaxy Buds3",
+      "price": 150,
+      "oldPrice": 250,
+      "badge": "Meilleure Vente",
+      "spec": "Bluetooth 5.3 · Réduction de bruit active · Autonomie 30h",
+      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800&auto=format&fit=crop"
     },
     {
-      "name": "Galaxy Buds 3",
-      "price": 169,
-      "spec": "Bluetooth 5.3, 30 hours battery life",
-      "image": "/uploads/couteurs-galaxy-buds-3-white-sm-r530nzwamea-prix-linksolutions-maroc6.webp"
+      "name": "Sony ULT Power Sound",
+      "price": 190,
+      "oldPrice": 290,
+      "badge": "Populaire",
+      "spec": "Enceinte étanche · Basses ultra profondes · 30h de batterie",
+      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=800&auto=format&fit=crop"
     },
     {
-      "name": "Shockproof Phone Case",
-      "price": 89,
-      "spec": "Military-grade drop protection",
-      "image": "https://placehold.co/600x600/16161a/e8e8ea?text=Product+3"
-    },
-    {
-      "name": "Smart Watch Series X",
-      "price": 349,
-      "spec": "Heart rate · Notifications · 7-day battery",
-      "image": "https://placehold.co/600x600/16161a/e8e8ea?text=Product+4"
-    },
-    {
-      "name": "10\" LED Ring Light",
-      "price": 159,
-      "spec": "3 tones · Adjustable tripod",
-      "image": "https://placehold.co/600x600/16161a/e8e8ea?text=Product+5"
+      "name": "K27 Quadripod 3-en-1",
+      "price": 140,
+      "oldPrice": 200,
+      "badge": "Nouveau",
+      "spec": "Perche selfie + trépied anti-shake + télécommande Bluetooth",
+      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800&auto=format&fit=crop"
     }
   ]
 }
