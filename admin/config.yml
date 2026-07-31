@@ -7,24 +7,237 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
+  # ----------------------------------------------------------
+  # 1) SITE SETTINGS — branding & tous les textes du site
+  # ----------------------------------------------------------
   - name: "settings"
-    label: "Réglages du Site (Branding & En-tête)"
+    label: "Réglages du Site (Branding & Textes)"
     files:
       - file: "site-settings.json"
         label: "Configuration Générale"
         name: "general"
         fields:
-          - { label: "Nom de la Boutique (Affiché comme logo)", name: "storeName", widget: "string" }
-          - { label: "Sous-titre du logo (ex: Online Store)", name: "tagline", widget: "string" }
-          - { label: "Bandeau d'Annonce (Haut de page)", name: "announcement", widget: "string" }
-          - { label: "Ligne au-dessus du titre principal", name: "eyebrow", widget: "string" }
-          - { label: "Grand Titre Principal (une ligne par phrase)", name: "headline", widget: "text" }
-          - { label: "Sous-titre sous le grand titre", name: "heroSubtext", widget: "text" }
-          - { label: "Titre de la section catalogue", name: "sectionTitle", widget: "string" }
-          - { label: "Numéro WhatsApp (sans + ni espaces, ex: 212600000000)", name: "whatsappNumber", widget: "string" }
-          - { label: "Texte avant le lien WhatsApp du pied de page", name: "footerNote", widget: "string" }
-          - { label: "Note de confirmation de commande", name: "confirmNote", widget: "text" }
+          - { label: "Nom de la Boutique (logo)", name: storeName, widget: string }
+          - { label: "Sous-titre du logo", name: tagline, widget: string }
 
+          - label: "Bandeau d'annonce (haut de page)"
+            name: announcement
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Ligne au-dessus du grand titre"
+            name: eyebrow
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Grand titre principal (une phrase par ligne)"
+            name: headline
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: text }
+              - { label: "Arabe / Darija", name: ar, widget: text, required: false }
+
+          - label: "Sous-titre sous le grand titre"
+            name: heroSubtext
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: text }
+              - { label: "Arabe / Darija", name: ar, widget: text, required: false }
+
+          - label: "Texte du 1er bouton (Voir les produits)"
+            name: ctaPrimary
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Texte du 2ème bouton (WhatsApp)"
+            name: ctaSecondary
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Badges de confiance (Livraison, Paiement, Qualité…)"
+            name: trustBadges
+            widget: list
+            summary: "{{fields.title.fr}}"
+            fields:
+              - { label: "Icône (emoji)", name: icon, widget: string }
+              - label: "Titre"
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "Français", name: fr, widget: string }
+                  - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+              - label: "Sous-titre"
+                name: sub
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "Français", name: fr, widget: string }
+                  - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Titre de la section « Comment ça marche ? »"
+            name: howItWorksTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Étapes de la section « Comment ça marche ? »"
+            name: howItWorksSteps
+            widget: list
+            summary: "{{fields.title.fr}}"
+            fields:
+              - label: "Titre de l'étape"
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "Français", name: fr, widget: string }
+                  - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+              - label: "Description"
+                name: text
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: "Français", name: fr, widget: string }
+                  - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Titre de la section catalogue"
+            name: productsSectionTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Mention « Livraison gratuite » sur les cartes produits"
+            name: freeDeliveryNote
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Délai de livraison"
+            name: deliveryTime
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Titre de la section avis clients"
+            name: testimonialsTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Titre de la section FAQ"
+            name: faqTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Titre du bloc contact"
+            name: contactTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Texte du bloc contact"
+            name: contactText
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: text }
+              - { label: "Arabe / Darija", name: ar, widget: text, required: false }
+
+          - label: "Texte du bouton WhatsApp du bloc contact"
+            name: contactCta
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - { label: "Texte du bouton Instagram", name: contactIgLabel, widget: string, required: false }
+
+          - { label: "Numéro WhatsApp (sans + ni espaces, ex: 212602786118)", name: whatsappNumber, widget: string }
+          - { label: "Numéro affiché (ex: +212 602-786-118)", name: phoneDisplay, widget: string, required: false }
+          - { label: "Lien Instagram", name: instagram, widget: string, required: false }
+
+          - label: "Horaires (pied de page)"
+            name: hours
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Texte d'aide en pied de page"
+            name: footerNote
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Mention livraison sur la page commande"
+            name: orderDeliveryNote
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Note de confirmation sous le formulaire de commande"
+            name: orderNote
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: text }
+              - { label: "Arabe / Darija", name: ar, widget: text, required: false }
+
+          - label: "Titre de confirmation après commande"
+            name: successTitle
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: string }
+              - { label: "Arabe / Darija", name: ar, widget: string, required: false }
+
+          - label: "Message de confirmation après commande"
+            name: successText
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Français", name: fr, widget: text }
+              - { label: "Arabe / Darija", name: ar, widget: text, required: false }
+
+  # ----------------------------------------------------------
+  # 2) PRODUITS — le catalogue
+  # ----------------------------------------------------------
   - name: "products"
     label: "Produits"
     files:
@@ -37,9 +250,49 @@ collections:
             widget: "list"
             summary: "{{fields.name}} — {{fields.price}} DH"
             fields:
-              - { label: "Nom du Produit", name: "name", widget: "string" }
-              - { label: "Prix actuel (DH, chiffres uniquement)", name: "price", widget: "number", value_type: "int" }
-              - { label: "Ancien Prix (Optionnel, chiffres uniquement)", name: "oldPrice", widget: "number", value_type: "int", required: false }
-              - { label: "Badge (ex: Meilleure Vente, Nouveau)", name: "badge", widget: "string", required: false }
-              - { label: "Courte Description / Spécifications", name: "spec", widget: "string", required: false }
-              - { label: "Photo du Produit", name: "image", widget: "image" }
+              - { label: "Nom du Produit", name: name, widget: string }
+              - { label: "Prix actuel (DH)", name: price, widget: number, value_type: "int" }
+              - { label: "Ancien Prix (optionnel, rayé)", name: oldPrice, widget: number, value_type: "int", required: false }
+              - { label: "Badge (ex: Meilleure Vente, Nouveau)", name: badge, widget: string, required: false }
+              - { label: "Catégorie (pour les filtres : Audio, Accessoires, Gadgets…)", name: category, widget: string, required: false }
+              - { label: "En stock", name: stock, widget: boolean, default: true }
+              - { label: "Courte Description / Spécifications", name: spec, widget: string, required: false }
+              - { label: "Photo du Produit", name: image, widget: image }
+
+  # ----------------------------------------------------------
+  # 3) FAQ — questions fréquentes
+  # ----------------------------------------------------------
+  - name: "faq"
+    label: "FAQ (Questions Fréquentes)"
+    files:
+      - file: "faq.json"
+        label: "Questions"
+        name: "faq"
+        fields:
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Question", name: q, widget: string }
+              - { label: "Réponse", name: a, widget: text }
+
+  # ----------------------------------------------------------
+  # 4) AVIS CLIENTS — preuve sociale
+  # ----------------------------------------------------------
+  - name: "testimonials"
+    label: "Avis Clients"
+    files:
+      - file: "testimonials.json"
+        label: "Avis"
+        name: "testimonials"
+        fields:
+          - label: "Avis"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Nom", name: name, widget: string }
+              - { label: "Ville", name: city, widget: string, required: false }
+              - { label: "Note (1 à 5)", name: rating, widget: number, value_type: "int", min: 1, max: 5 }
+              - { label: "Texte de l'avis", name: text, widget: text }

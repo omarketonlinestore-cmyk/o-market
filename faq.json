@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "q": "Est-ce que la livraison est vraiment gratuite ?",
+      "a": "Oui, la livraison est gratuite partout au Maroc pour toutes les commandes. Vous payez uniquement le prix du produit, à la réception."
+    },
+    {
+      "q": "Comment fonctionne le paiement à la livraison ?",
+      "a": "Très simple : vous ne payez rien en ligne. Vous payez en espèces au livreur lorsque vous recevez votre commande. Aucun paiement n'est demandé à l'avance."
+    },
+    {
+      "q": "Quel est le délai de livraison ?",
+      "a": "La livraison prend généralement 24 à 72 heures selon votre ville. Nous vous donnons une estimation lors de l'appel de confirmation."
+    },
+    {
+      "q": "Comment ma commande est-elle confirmée ?",
+      "a": "Après avoir passé votre commande, nous vous appelons dans les 24h pour confirmer le produit, le prix et l'adresse de livraison avant l'expédition."
+    },
+    {
+      "q": "Puis-je suivre ma commande ?",
+      "a": "Oui. Contactez-nous sur WhatsApp avec votre nom et votre numéro de téléphone, nous vous donnerons le suivi de votre livraison."
+    },
+    {
+      "q": "Que faire si le produit ne me convient pas ?",
+      "a": "Vous pouvez inspecter votre colis à la réception. Si vous avez le moindre problème, contactez-nous sur WhatsApp et nous trouverons une solution."
+    }
+  ]
+}

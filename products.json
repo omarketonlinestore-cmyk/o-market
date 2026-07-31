@@ -5,6 +5,8 @@
       "price": 170,
       "oldPrice": 250,
       "badge": "Meilleure Vente",
+      "category": "Audio",
+      "stock": true,
       "spec": "Bluetooth 5.3 · Réduction de bruit active · Autonomie 30h",
       "image": "/uploads/couteurs-galaxy-buds-3-white-sm-r530nzwamea-prix-linksolutions-maroc6.webp"
     },
@@ -13,6 +15,8 @@
       "price": 190,
       "oldPrice": 290,
       "badge": "Populaire",
+      "category": "Audio",
+      "stock": true,
       "spec": "Enceinte étanche + Basses ultra profondes + 30h de batterie",
       "image": "/uploads/610DB8Cwm7L._AC_SX679_.jpg.jpeg"
     },
@@ -21,6 +25,8 @@
       "price": 160,
       "oldPrice": 250,
       "badge": "Nouveau",
+      "category": "Accessoires",
+      "stock": true,
       "spec": "Perche selfie + trépied anti-shake + télécommande Bluetooth",
       "image": "/uploads/H2eea5562b4f64b4b8b106a0b3e1a587dt.jpg_960x960q80.jpg.jpeg"
     },
@@ -29,6 +35,8 @@
       "price": 120,
       "oldPrice": 200,
       "badge": "Nouveau",
+      "category": "Gadgets",
+      "stock": true,
       "spec": "High-Speed Mini Fan + Large Capacity Battery + For Indoor and Outdoor travel activities",
       "image": "/uploads/fan digital display 40dh.jpg"
     }

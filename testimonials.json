@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "Yassine A.",
+      "city": "Rabat",
+      "rating": 5,
+      "text": "Commande simple et livraison rapide. J'ai payé à la réception, exactement comme annoncé. Très satisfait."
+    },
+    {
+      "name": "Salma B.",
+      "city": "Casablanca",
+      "rating": 5,
+      "text": "Le produit est conforme aux photos. On m'a appelé pour confirmer avant l'envoi, c'est très pro. Je recommande."
+    },
+    {
+      "name": "Mehdi T.",
+      "city": "Kénitra",
+      "rating": 4,
+      "text": "Bon rapport qualité/prix et livraison gratuite. Réponse rapide sur WhatsApp."
+    }
+  ]
+}

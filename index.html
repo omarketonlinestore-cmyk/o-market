@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Market — Électronique & Gadgets au Maroc</title>
+<meta name="description" content="O Market — Électronique et gadgets au Maroc. Livraison gratuite partout au Maroc, paiement à la livraison. Produits fiables, prix justes.">
+<meta name="theme-color" content="#07070e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="O Market">
+<meta property="og:title" content="O Market — Électronique & Gadgets au Maroc">
+<meta property="og:description" content="Produits fiables, prix justes, paiement à la livraison. Livraison gratuite partout au Maroc.">
+<meta property="og:url" content="https://o-market-seven.vercel.app/">
+<meta property="og:image" content="https://o-market-seven.vercel.app/uploads/couteurs-galaxy-buds-3-white-sm-r530nzwamea-prix-linksolutions-maroc6.webp">
+<meta property="og:locale" content="fr_MA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div id="announcement-bar" class="announcement-bar">
-    <span id="announcement-text">⚡ Livraison Rapide + Paiement à la Livraison (COD) dans tout le Maroc!</span>
+  <!-- Announcement -->
+  <div class="announcement-bar">
+    <span id="announcement-text">⚡ Livraison gratuite + paiement à la livraison partout au Maroc !</span>
   </div>
 
   <!-- Header -->
@@ -29,8 +43,11 @@
         </div>
       </a>
       <nav class="header-links">
-        <a href="#products">Produits</a>
-        <a href="#contact">Contact</a>
+        <a href="#products" data-i18n="navProducts">Produits</a>
+        <a href="#how" data-i18n="navHow">Comment ça marche</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Changer de langue">ع</button>
       </nav>
     </div>
   </header>
@@ -38,65 +55,143 @@
   <!-- Hero -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow" id="hero-eyebrow">Rabat · Casablanca · Kénitra — Livraison dans tout le Maroc</p>
-      <h1 id="hero-headline">Produits Fiables.<br>Prix Imbattables.<br>Paiement à la Livraison.</h1>
-      <p class="hero-sub" id="hero-subtext">Découvrez notre catalogue ci-dessous, cliquez sur "Commander" sur l'article souhaité, et nous vous appelons pour confirmer avant l'expédition.</p>
+      <p class="eyebrow"><span class="dot"></span><span id="hero-eyebrow">Livraison partout au Maroc</span></p>
+      <h1 id="hero-headline">Produits Fiables.<br>Prix Justes.<br>Paiement à la Livraison.</h1>
+      <p class="hero-sub" id="hero-subtext">Choisissez un produit, commandez en 30 secondes, et nous vous appelons pour confirmer avant l'expédition.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn" id="cta-primary">Voir les produits</a>
+        <a href="https://wa.me/212602786118" class="btn btn-whatsapp" data-whatsapp id="cta-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span id="cta-secondary-text">WhatsApp</span>
+        </a>
+      </div>
+      <ul class="hero-chips">
+        <li data-i18n="chipPayment">Paiement à la livraison</li>
+        <li data-i18n="chipDelivery">Livraison gratuite</li>
+        <li data-i18n="chipTime">Livraison 24-72h</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Trust Badges -->
+  <!-- Trust badges -->
   <section class="trust-section">
-    <div class="wrap trust-grid">
-      <div class="trust-item">
-        <span class="trust-icon">🚚</span>
-        <div>
-          <h4>Livraison Rapide</h4>
-          <p>Partout au Maroc</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">💵</span>
-        <div>
-          <h4>Paiement à la Livraison</h4>
-          <p>Cash on Delivery (COD)</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <span class="trust-icon">💯</span>
-        <div>
-          <h4>Qualité Garantie</h4>
-          <p>Produits 100% Vérifiés</p>
-        </div>
-      </div>
+    <div class="wrap trust-grid" id="trust-grid"></div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section how">
+    <div class="wrap">
+      <h2 class="section-title" id="how-title">Comment ça marche ?</h2>
+      <div class="steps" id="steps"></div>
     </div>
   </section>
 
-  <!-- Products Catalog -->
+  <!-- Products -->
   <section id="products" class="products">
     <div class="wrap">
-      <h2 class="section-title" id="section-title">Catalogue des Produits</h2>
-
+      <h2 class="section-title" id="products-title">Catalogue des Produits</h2>
+      <div class="filters" id="filters"></div>
       <div class="grid" id="product-grid">
         <p class="grid-message">Chargement des produits…</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="contact" class="site-footer">
-    <div class="wrap footer-row">
-      <div class="logo-group">
-        <div class="logo-icon small">
-          <svg class="power-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v10"></path>
-            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-          </svg>
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="wrap">
+      <h2 class="section-title" id="testimonials-title">Ils nous font confiance</h2>
+      <div class="grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap narrow">
+      <h2 class="section-title" id="faq-title">Questions Fréquentes</h2>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <h2 id="contact-title">Une question ? On vous répond vite.</h2>
+        <p id="contact-text">Écrivez-nous sur WhatsApp, nous répondons en quelques minutes.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/212602786118" class="btn btn-whatsapp" data-whatsapp id="contact-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <span id="contact-wa-text">Contacter sur WhatsApp</span>
+          </a>
+          <a href="https://www.instagram.com/o.market.online/" class="btn btn-ghost" target="_blank" rel="noopener" id="contact-ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span id="contact-ig-text">Instagram</span>
+          </a>
         </div>
-        <span class="logo-title small" id="site-logo-footer">OMARKET</span>
       </div>
-      <p id="footer-contact">Des questions ? WhatsApp : <a id="whatsapp-link" href="https://wa.me/212600000000" target="_blank">+212 600-000000</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-group">
+            <div class="logo-icon small">
+              <svg class="power-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v10"></path>
+                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+              </svg>
+            </div>
+            <span class="logo-title small" id="site-logo-footer">OMARKET</span>
+          </div>
+          <p>Électronique & gadgets de confiance, livrés partout au Maroc. Payez à la réception, sans risque.</p>
+          <div class="social-links">
+            <a class="social-link" href="https://www.instagram.com/o.market.online/" target="_blank" rel="noopener" aria-label="Instagram" data-instagram>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a class="social-link" href="https://wa.me/212602786118" target="_blank" rel="noopener" aria-label="WhatsApp" data-whatsapp>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#products" data-i18n="navProducts">Produits</a></li>
+            <li><a href="#how" data-i18n="navHow">Comment ça marche</a></li>
+            <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
+            <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/212602786118" target="_blank" rel="noopener" data-whatsapp id="footer-wa">WhatsApp</a>
+            </li>
+            <li><a href="https://www.instagram.com/o.market.online/" target="_blank" rel="noopener" data-instagram>Instagram</a></li>
+            <li><span id="phone-display">+212 602-786-118</span></li>
+            <li><span id="hours">Lun – Sam : 9h à 21h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> <span id="footer-logo-name">OMARKET</span> — <span data-i18n="footerRights">Tous droits réservés.</span></span>
+        <span id="footer-note">Une question ? Contactez-nous sur WhatsApp</span>
+      </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp -->
+  <a id="whatsapp-float" class="whatsapp-float" href="https://wa.me/212602786118" target="_blank" rel="noopener" data-whatsapp aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.668-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
