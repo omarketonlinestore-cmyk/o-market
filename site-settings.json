@@ -1,103 +1,168 @@
 {
   "storeName": "OMARKET",
   "tagline": "Online Store",
-
   "announcement": {
     "fr": "⚡ Livraison gratuite + paiement à la livraison partout au Maroc !",
     "ar": "⚡ التوصيل مجاني والدفع عند الاستلام في كل المغرب!"
   },
-
   "eyebrow": {
     "fr": "Livraison partout au Maroc · Rabat · Casablanca · Tanger",
     "ar": "التوصيل لجميع مدن المغرب"
   },
-
   "headline": {
-    "fr": "Produits Fiables.\nPrix Justes.\nPaiement à la Livraison.",
+    "fr": "Good Products.\nGreat Prices.\nCash On Delivery.",
     "ar": "منتجات موثوقة.\nأسعار عادلة.\nالدفع عند الاستلام."
   },
-
   "heroSubtext": {
     "fr": "Choisissez un produit, commandez en 30 secondes, et nous vous appelons pour confirmer avant l'expédition. Vous ne payez qu'à la réception.",
     "ar": "اختر منتجًا، اطلب في 30 ثانية، وسنتصل بك للتأكيد قبل الشحن. لن تدفع إلا عند الاستلام."
   },
-
-  "ctaPrimary": { "fr": "Voir les produits", "ar": "تصفح المنتجات" },
-  "ctaSecondary": { "fr": "WhatsApp", "ar": "واتساب" },
-
+  "ctaPrimary": {
+    "fr": "Voir les produits",
+    "ar": "تصفح المنتجات"
+  },
+  "ctaSecondary": {
+    "fr": "WhatsApp",
+    "ar": "واتساب"
+  },
   "trustBadges": [
     {
       "icon": "🚚",
-      "title": { "fr": "Livraison Gratuite", "ar": "التوصيل مجاني" },
-      "sub": { "fr": "Partout au Maroc", "ar": "في كل المغرب" }
+      "title": {
+        "fr": "Livraison Gratuite",
+        "ar": "التوصيل مجاني"
+      },
+      "sub": {
+        "fr": "Partout au Maroc",
+        "ar": "في كل المغرب"
+      }
     },
     {
       "icon": "💵",
-      "title": { "fr": "Paiement à la Livraison", "ar": "الدفع عند الاستلام" },
-      "sub": { "fr": "Payez à la réception", "ar": "ادفع عند الاستلام" }
+      "title": {
+        "fr": "Paiement à la Livraison",
+        "ar": "الدفع عند الاستلام"
+      },
+      "sub": {
+        "fr": "Payez à la réception",
+        "ar": "ادفع عند الاستلام"
+      }
     },
     {
       "icon": "✅",
-      "title": { "fr": "Qualité Vérifiée", "ar": "جودة مضمونة" },
-      "sub": { "fr": "Produits contrôlés avant envoi", "ar": "منتجات مفحوصة قبل الشحن" }
+      "title": {
+        "fr": "Qualité Vérifiée",
+        "ar": "جودة مضمونة"
+      },
+      "sub": {
+        "fr": "Produits contrôlés avant envoi",
+        "ar": "منتجات مفحوصة قبل الشحن"
+      }
     },
     {
       "icon": "💬",
-      "title": { "fr": "Support WhatsApp", "ar": "الدعم عبر واتساب" },
-      "sub": { "fr": "Réponse rapide 7j/7", "ar": "رد سريع طوال الأسبوع" }
+      "title": {
+        "fr": "Support WhatsApp",
+        "ar": "الدعم عبر واتساب"
+      },
+      "sub": {
+        "fr": "Réponse rapide 7j/7",
+        "ar": "رد سريع طوال الأسبوع"
+      }
     }
   ],
-
-  "howItWorksTitle": { "fr": "Comment ça marche ?", "ar": "كيف تطلب؟" },
-
+  "howItWorksTitle": {
+    "fr": "Comment ça marche ?",
+    "ar": "كيف تطلب؟"
+  },
   "howItWorksSteps": [
     {
-      "title": { "fr": "Choisissez", "ar": "اختر" },
-      "text": { "fr": "Parcourez le catalogue et sélectionnez le produit qui vous convient.", "ar": "تصفح الكتالوج واختر المنتج المناسب لك." }
+      "title": {
+        "fr": "Choisissez",
+        "ar": "اختر"
+      },
+      "text": {
+        "fr": "Parcourez le catalogue et sélectionnez le produit qui vous convient.",
+        "ar": "تصفح الكتالوج واختر المنتج المناسب لك."
+      }
     },
     {
-      "title": { "fr": "Commandez", "ar": "اطلب" },
-      "text": { "fr": "Remplissez le formulaire. Nous vous appelons pour confirmer avant l'envoi.", "ar": "املأ الاستمارة. سنتصل بك لتأكيد الطلب قبل الشحن." }
+      "title": {
+        "fr": "Commandez",
+        "ar": "اطلب"
+      },
+      "text": {
+        "fr": "Remplissez le formulaire. Nous vous appelons pour confirmer avant l'envoi.",
+        "ar": "املأ الاستمارة. سنتصل بك لتأكيد الطلب قبل الشحن."
+      }
     },
     {
-      "title": { "fr": "Recevez & payez", "ar": "استلم وادفع" },
-      "text": { "fr": "Recevez votre commande chez vous et payez à la livraison.", "ar": "استلم طلبك في منزلك وادفع عند التسليم." }
+      "title": {
+        "fr": "Recevez & payez",
+        "ar": "استلم وادفع"
+      },
+      "text": {
+        "fr": "Recevez votre commande chez vous et payez à la livraison.",
+        "ar": "استلم طلبك في منزلك وادفع عند التسليم."
+      }
     }
   ],
-
-  "productsSectionTitle": { "fr": "Catalogue des Produits", "ar": "منتجاتنا" },
-  "freeDeliveryNote": { "fr": "Livraison gratuite", "ar": "التوصيل مجاني" },
-  "deliveryTime": { "fr": "Délai 24-72h selon votre ville", "ar": "24-72 ساعة حسب مدينتك" },
-
-  "testimonialsTitle": { "fr": "Ils nous font confiance", "ar": "عملاؤنا يثقون بنا" },
-  "faqTitle": { "fr": "Questions Fréquentes", "ar": "أسئلة شائعة" },
-
-  "contactTitle": { "fr": "Une question ? On vous répond vite.", "ar": "عندك سؤال؟ نجاوبك بسرعة." },
+  "productsSectionTitle": {
+    "fr": "Catalogue des Produits",
+    "ar": "منتجاتنا"
+  },
+  "freeDeliveryNote": {
+    "fr": "Livraison gratuite",
+    "ar": "التوصيل مجاني"
+  },
+  "deliveryTime": {
+    "fr": "Délai 24-72h selon votre ville",
+    "ar": "24-72 ساعة حسب مدينتك"
+  },
+  "testimonialsTitle": {
+    "fr": "Ils nous font confiance",
+    "ar": "عملاؤنا يثقون بنا"
+  },
+  "faqTitle": {
+    "fr": "Questions Fréquentes",
+    "ar": "أسئلة شائعة"
+  },
+  "contactTitle": {
+    "fr": "Une question ? On vous répond vite.",
+    "ar": "عندك سؤال؟ نجاوبك بسرعة."
+  },
   "contactText": {
     "fr": "Écrivez-nous sur WhatsApp, nous répondons en quelques minutes pendant nos horaires.",
     "ar": "اكتب لنا على واتساب وسنجيبك خلال دقائق."
   },
-  "contactCta": { "fr": "Contacter sur WhatsApp", "ar": "تواصل عبر واتساب" },
+  "contactCta": {
+    "fr": "Contacter sur WhatsApp",
+    "ar": "تواصل عبر واتساب"
+  },
   "contactIgLabel": "Instagram",
-
   "whatsappNumber": "212602786118",
   "phoneDisplay": "+212 602-786-118",
   "instagram": "https://www.instagram.com/o.market.online/",
-  "hours": { "fr": "Lun – Sam : 9h à 21h", "ar": "الإثنين – السبت: 9 إلى 21" },
-
+  "hours": {
+    "fr": "Lun – Sam : 9h à 21h",
+    "ar": "الإثنين – السبت: 9 إلى 21"
+  },
   "footerNote": {
     "fr": "Une question ? Contactez-nous sur WhatsApp",
     "ar": "عندك سؤال؟ تواصل معنا عبر واتساب"
   },
-
-  "orderDeliveryNote": { "fr": "Livraison gratuite partout au Maroc", "ar": "التوصيل مجاني في كل المغرب" },
-
+  "orderDeliveryNote": {
+    "fr": "Livraison gratuite partout au Maroc",
+    "ar": "التوصيل مجاني في كل المغرب"
+  },
   "orderNote": {
     "fr": "Aucun paiement maintenant — vous payez à la réception. Nous vous appelons dans les 24h pour confirmer avant l'expédition.",
     "ar": "لا يوجد دفع الآن — تدفع عند الاستلام. سنتصل بك خلال 24 ساعة لتأكيد الطلب قبل الشحن."
   },
-
-  "successTitle": { "fr": "Commande reçue !", "ar": "تم استلام طلبك!" },
+  "successTitle": {
+    "fr": "Commande reçue !",
+    "ar": "تم استلام طلبك!"
+  },
   "successText": {
     "fr": "Merci ! Nous vous appellerons bientôt pour confirmer votre commande et les détails de livraison.",
     "ar": "شكرًا! سنتصل بك قريبًا لتأكيد طلبك وتفاصيل التوصيل."
