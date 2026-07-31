@@ -1,18 +1,35 @@
 // ============================================
-// SITE-WIDE SETTINGS: loads on every page (logo, headline, WhatsApp number,
-// footer text, etc.) from site-settings.json — edited in /admin under
-// "Site Settings". This is what makes the whole site editable from admin,
-// not just the products.
+// O MARKET — site script
+// Loads editable content from site-settings.json (logo, headline, WhatsApp
+// number, footer, announcement bar) and the catalog from products.json —
+// both edited from /admin — and renders them into the page.
 // ============================================
-fetch("site-settings.json")
-  .then((res) => res.json())
+
+// Cache-busting query param so admin edits show up immediately instead of
+// waiting on a stale cached copy of the JSON files. Also checks res.ok so a
+// failed request never silently hangs on "Loading..." forever.
+function freshFetch(path) {
+  return fetch(path + "?v=" + Date.now()).then((res) => {
+    if (!res.ok) throw new Error(path + " responded with status " + res.status);
+    return res.json();
+  });
+}
+
+// ---- Site-wide settings ----
+freshFetch("site-settings.json")
   .then((s) => {
     document.querySelectorAll("#site-logo, #site-logo-footer").forEach((el) => {
-      el.textContent = s.storeName || "";
+      if (s.storeName) el.textContent = s.storeName;
     });
 
+    const tagline = document.getElementById("site-tagline");
+    if (tagline && s.tagline) tagline.textContent = s.tagline;
+
+    const announcement = document.getElementById("announcement-text");
+    if (announcement && s.announcement) announcement.textContent = s.announcement;
+
     const eyebrow = document.getElementById("hero-eyebrow");
-    if (eyebrow) eyebrow.textContent = s.eyebrow || "";
+    if (eyebrow && s.eyebrow) eyebrow.textContent = s.eyebrow;
 
     const headline = document.getElementById("hero-headline");
     if (headline && s.headline) {
@@ -24,13 +41,13 @@ fetch("site-settings.json")
     }
 
     const subtext = document.getElementById("hero-subtext");
-    if (subtext) subtext.textContent = s.heroSubtext || "";
+    if (subtext && s.heroSubtext) subtext.textContent = s.heroSubtext;
 
     const sectionTitle = document.getElementById("section-title");
-    if (sectionTitle) sectionTitle.textContent = s.sectionTitle || "";
+    if (sectionTitle && s.sectionTitle) sectionTitle.textContent = s.sectionTitle;
 
     const confirmNote = document.getElementById("confirm-note");
-    if (confirmNote) confirmNote.textContent = s.confirmNote || "";
+    if (confirmNote && s.confirmNote) confirmNote.textContent = s.confirmNote;
 
     const footerContact = document.getElementById("footer-contact");
     const whatsappLink = document.getElementById("whatsapp-link");
@@ -38,64 +55,77 @@ fetch("site-settings.json")
       whatsappLink.href = "https://wa.me/" + s.whatsappNumber;
       whatsappLink.textContent = "+" + s.whatsappNumber;
     }
-    if (footerContact && s.footerNote) {
+    if (footerContact && s.footerNote && footerContact.childNodes[0]) {
       footerContact.childNodes[0].textContent = s.footerNote + " ";
     }
   })
-  .catch(() => {
-    // If this fails, the hardcoded fallback text already in the HTML stays visible.
+  .catch((err) => {
+    // If this fails, the fallback text already written into the HTML stays visible.
+    console.warn("Site settings did not load, showing fallback text:", err);
   });
 
-// ============================================
-// HOMEPAGE: load products from products.json (edited by the /admin panel)
-// and build the product cards automatically.
-// ============================================
+// ---- Product catalog (homepage only) ----
 const productGrid = document.getElementById("product-grid");
 if (productGrid) {
-  fetch("products.json")
-    .then((res) => res.json())
+  freshFetch("products.json")
     .then((data) => {
       const products = data.products || [];
       if (products.length === 0) {
-        productGrid.innerHTML = '<p class="spec">No products yet.</p>';
+        productGrid.innerHTML = '<p class="grid-message">Aucun produit pour le moment.</p>';
         return;
       }
-      productGrid.innerHTML = products
-        .map((p) => {
-          const orderUrl =
-            "order.html?product=" +
-            encodeURIComponent(p.name) +
-            "&price=" +
-            encodeURIComponent(p.price + " MAD");
-          return `
-            <article class="card">
-              <div class="card-img">
-                <img src="${p.image}" alt="${p.name}">
-              </div>
-              <div class="card-body">
-                <h3>${p.name}</h3>
-                <p class="spec">${p.spec || ""}</p>
-                <div class="price">[ ${p.price} MAD ]</div>
-                <a class="btn" href="${orderUrl}">Order Now</a>
-              </div>
-            </article>`;
-        })
-        .join("");
+      productGrid.innerHTML = products.map(renderCard).join("");
     })
-    .catch(() => {
-      productGrid.innerHTML = '<p class="spec">Could not load products right now.</p>';
+    .catch((err) => {
+      productGrid.innerHTML =
+        '<p class="grid-message">Impossible de charger les produits pour le moment. Rechargez la page dans un instant.</p>';
+      console.error("Product load failed:", err);
     });
+}
+
+function renderCard(p) {
+  const orderUrl =
+    "order.html?product=" +
+    encodeURIComponent(p.name) +
+    "&price=" +
+    encodeURIComponent(p.price + " DH");
+
+  const badge = p.badge ? `<span class="badge">${p.badge}</span>` : "";
+
+  const oldPrice =
+    p.oldPrice && p.oldPrice > p.price
+      ? `<span class="price-old">${p.oldPrice} DH</span>`
+      : "";
+
+  // encodeURI protects against filenames with raw spaces breaking the image request
+  const imageSrc = p.image ? encodeURI(p.image) : "";
+
+  return `
+    <article class="card">
+      <div class="card-img">
+        ${badge}
+        <img src="${imageSrc}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p class="spec">${p.spec || ""}</p>
+        <div class="price-row">
+          <span class="price">${p.price} DH</span>
+          ${oldPrice}
+        </div>
+        <a class="btn" href="${orderUrl}">Commander</a>
+      </div>
+    </article>`;
 }
 
 // ============================================
 // ORDER PAGE
-// Reads the product name & price from the link that was clicked (e.g. index.html -> "Order Now")
-// and displays them at the top of the order page, and inside hidden form fields
-// so they get included in the email you receive.
+// Reads the product name & price from the link that was clicked and shows
+// them at the top of the order page + inside hidden form fields so they're
+// included in the email you receive.
 // ============================================
-
 const params = new URLSearchParams(window.location.search);
-const productName = params.get("product") || "Unknown product";
+const productName = params.get("product") || "Produit";
 const productPrice = params.get("price") || "—";
 
 const nameEl = document.getElementById("product-name");
@@ -108,15 +138,15 @@ const hiddenPrice = document.getElementById("hidden-price");
 if (hiddenName) hiddenName.value = productName;
 if (hiddenPrice) hiddenPrice.value = productPrice;
 
-// Show a friendly "Order received" message after Formspree accepts the submission,
-// without leaving the page (keeps the flow feeling like one seamless purchase).
+// Shows a friendly "Order received" message after Formspree accepts the
+// submission, without leaving the page.
 const form = document.getElementById("order-form");
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const submitBtn = form.querySelector("button[type=submit]");
     submitBtn.disabled = true;
-    submitBtn.textContent = "Sending…";
+    submitBtn.textContent = "Envoi en cours…";
 
     try {
       const response = await fetch(form.action, {
@@ -127,17 +157,18 @@ if (form) {
 
       if (response.ok) {
         form.style.display = "none";
-        document.getElementById("success-message").hidden = false;
-        document.getElementById("success-message").style.display = "block";
+        const success = document.getElementById("success-message");
+        success.hidden = false;
+        success.style.display = "block";
       } else {
-        alert("Something went wrong sending your order. Please try again, or contact us on WhatsApp.");
+        alert("Un problème est survenu lors de l'envoi. Réessayez, ou contactez-nous sur WhatsApp.");
         submitBtn.disabled = false;
-        submitBtn.textContent = "Confirm Order";
+        submitBtn.textContent = "Confirmer la commande";
       }
     } catch (err) {
-      alert("Network error. Please check your connection and try again.");
+      alert("Erreur réseau. Vérifiez votre connexion et réessayez.");
       submitBtn.disabled = false;
-      submitBtn.textContent = "Confirm Order";
+      submitBtn.textContent = "Confirmer la commande";
     }
   });
 }
