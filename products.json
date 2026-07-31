@@ -2,27 +2,35 @@
   "products": [
     {
       "name": "Samsung Galaxy Buds3",
-      "price": 150,
+      "price": 170,
       "oldPrice": 250,
       "badge": "Meilleure Vente",
       "spec": "Bluetooth 5.3 · Réduction de bruit active · Autonomie 30h",
-      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=800&auto=format&fit=crop"
+      "image": "/uploads/couteurs-galaxy-buds-3-white-sm-r530nzwamea-prix-linksolutions-maroc6.webp"
     },
     {
       "name": "Sony ULT Power Sound",
       "price": 190,
       "oldPrice": 290,
       "badge": "Populaire",
-      "spec": "Enceinte étanche · Basses ultra profondes · 30h de batterie",
-      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=800&auto=format&fit=crop"
+      "spec": "Enceinte étanche + Basses ultra profondes + 30h de batterie",
+      "image": "/uploads/610DB8Cwm7L._AC_SX679_.jpg.jpeg"
     },
     {
       "name": "K27 Quadripod 3-en-1",
-      "price": 140,
-      "oldPrice": 200,
+      "price": 160,
+      "oldPrice": 250,
       "badge": "Nouveau",
       "spec": "Perche selfie + trépied anti-shake + télécommande Bluetooth",
-      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800&auto=format&fit=crop"
+      "image": "/uploads/H2eea5562b4f64b4b8b106a0b3e1a587dt.jpg_960x960q80.jpg.jpeg"
+    },
+    {
+      "name": "Portable FAN - Led digital display",
+      "price": 120,
+      "oldPrice": 200,
+      "badge": "Nouveau",
+      "spec": "High-Speed Mini Fan + Large Capacity Battery + For Indoor and Outdoor travel activities",
+      "image": "/uploads/fan digital display 40dh.jpg"
     }
   ]
 }
